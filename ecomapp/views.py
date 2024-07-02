@@ -24,10 +24,6 @@ def shop(request):
     products = Product.objects.all()
     return render(request, 'ecomapp/shop.html', {'products': products})
 
-# @login_required
-# def shop_login(request):
-#     products = Product.objects.all()
-#     return render(request, 'ecomapp/shop_login.html', {'products': products})
 
 @login_required
 def product_detail_view(request, pk):
