@@ -93,7 +93,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            auth_login(request, user)  # Use auth_login to log in the user
             messages.success(request, f"Welcome, {user.username}! Your account has been created successfully.")
             return redirect('index')  # Redirect to a success page.
     else:
