@@ -49,12 +49,10 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="{% url 'logout' %}">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                Logout
-              </span>
-            </a>
+            <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+              {% csrf_token %}
+            </form>
+            <a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
             <a href="{% url 'cart' %}">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>

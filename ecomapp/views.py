@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
@@ -132,3 +132,7 @@ def contact(request):
 
 def success(request):
     return render(request, 'ecomapp/success.html')
+
+def logout(request):
+    logout(request)
+    return redirect('home')

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import  register,product_detail_view, add_to_cart_view, cart_view
+from .views import  register,product_detail_view, add_to_cart_view, cart_view, logout
 
 
 urlpatterns = [
